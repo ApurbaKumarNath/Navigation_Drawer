@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_broadcast">
+
+    <fragment
+        android:id="@+id/nav_broadcast"
+        android:name="com.example.navigationdrawer.BroadcastFragment"
+        android:label="Broadcast Receiver"
+        tools:layout="@layout/fragment_broadcast">
+
+        <!-- Action to go to Custom Input Fragment -->
+        <action
+            android:id="@+id/action_nav_broadcast_to_customInput"
+            app:destination="@id/nav_custom_input" />
+
+        <!-- Action to go to System Battery Fragment -->
+        <action
+            android:id="@+id/action_nav_broadcast_to_systemBattery"
+            app:destination="@id/nav_system_battery" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_image_scale"
+        android:name="com.example.navigationdrawer.ImageScaleFragment"
+        android:label="Image Scale"
+        tools:layout="@layout/fragment_image_scale" />
+
+    <fragment
+        android:id="@+id/nav_video"
+        android:name="com.example.navigationdrawer.VideoFragment"
+        android:label="Video"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/nav_audio"
+        android:name="com.example.navigationdrawer.AudioFragment"
+        android:label="Audio"
+        tools:layout="@layout/fragment_audio" />
+
+
+    <fragment
+    android:id="@+id/nav_system_battery"
+    android:name="com.example.navigationdrawer.SystemBatteryFragment"
+    android:label="System Battery"
+    tools:layout="@layout/fragment_system_battery" />
+
+    <fragment
+        android:id="@+id/nav_custom_input"
+        android:name="com.example.navigationdrawer.CustomBroadcastInputFragment"
+        android:label="Input Message"
+        tools:layout="@layout/fragment_custom_broadcast_input">
+
+        <!-- Action to go to the final receiver screen -->
+        <action
+            android:id="@+id/action_nav_customInput_to_customReceiver"
+            app:destination="@id/nav_custom_receiver" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_custom_receiver"
+        android:name="com.example.navigationdrawer.CustomBroadcastReceiverFragment"
+        android:label="Custom Receiver"
+        tools:layout="@layout/fragment_custom_broadcast_receiver">
+
+        <!-- Define the argument we expect to receive from the input screen -->
+        <argument
+            android:name="messageToBroadcast"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

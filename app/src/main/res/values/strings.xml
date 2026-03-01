@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    // adding items for spinner
+    <string-array name="broadcast_options">
+        <item>Custom broadcast receiver</item>
+        <item>System battery notification receiver</item>
+    </string-array>
+
+</resources>
